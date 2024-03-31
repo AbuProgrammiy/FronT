@@ -72,11 +72,10 @@
     font-family: sans-serif;
 }
 
-.{
+.content-description{
     font-size: 14px;
     font-weight: 400;
     padding-left: 15px;
     font-family: sans-serif;
-    columns: #333333
-    ;
+    color: #333333;
 }

@@ -45,6 +45,9 @@
     color: white;
     background-color: #5DB7DE;
 }
+.services-text-description-button-1:hover{
+    cursor: pointer;
+}
 
 .services-text-description-button-2{
     width: 46px;
@@ -57,6 +60,10 @@
     font-family: sans-serif;
     color: white;
     background-color: #5DB7DE;
+}
+
+.services-text-description-button-2:hover{
+    cursor: pointer;
 }
 
 .service-directions-boxes{

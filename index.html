@@ -5,18 +5,18 @@
     <title>Visma</title>
     <link rel="icon" href="assets/images/visma_icon.png">
     <!--       ^^^^ -> iconka uchun-->
-    <link rel="stylesheet" href="assets/header-styles.css">
-    <link rel="stylesheet" href="assets/main-window-1.css">
-    <link rel="stylesheet" href="assets/main-window-2.css">
-    <link rel="stylesheet" href="assets/main-window-3.css">
-    <link rel="stylesheet" href="assets/main-window-4.css">
-    <link rel="stylesheet" href="assets/footer.css">
+    <link rel="stylesheet" href="assets/index-csses/header-styles.css">
+    <link rel="stylesheet" href="assets/index-csses/main-window-1.css">
+    <link rel="stylesheet" href="assets/index-csses/main-window-2.css">
+    <link rel="stylesheet" href="assets/index-csses/main-window-3.css">
+    <link rel="stylesheet" href="assets/index-csses/main-window-4.css">
+    <link rel="stylesheet" href="assets/index-csses/footer.css">
     <!--       ^^^^^^^^^^ -> stylesheet uchun-->
 
 </head>
 
 <body>
-    <div class="header">
+    <header class="header">
         <!--    ^^^^^^ -> header-->
         <a href="#main"><img class="header-logo" src="assets/images/visma_logo.png"></a>
         <!--        ^^^^^^^^^^^ -> headerdagi logo uchun-->
@@ -27,6 +27,7 @@
             <li><a href="#uslugi">Услуги</a></li>
             <li><a href="#o-kompanii">О компании</a></li>
             <li><a href="#novosti">Новости</a></li>
+            <li><a href="pages-page.html">Страницы</a></li>
         </ul>
 
         <img class="header-serach-icon" src="assets/images/search_icon.png">
@@ -41,7 +42,7 @@
             <option>UZ</option>
             <option>KZ</option>
         </select>
-    </div>
+    </header>
 
     <div id="main" class="main-window-1">
         <!--    ^^^^^^^^^^^^^ -> asosiy pageni main windowi-->
@@ -51,7 +52,7 @@
             <p class="description-text">Vel posuere nibh odio placerat massa vel tellus <br>
                 tortor. Varius eget nunc scelerisque etiam felis <br>
                 facilisi ante viverra sem. Nunc eros elementum</p>
-            <a href="#Next-Page">
+            <a href="#o-kompanii">
                 <p class="pointer-text">О КОМАПАНИИ</p>
                 <!--      ^^^^^^^^^^ -> O Kompanii texti uchun-->
                 <img class="pointer-circle" src="assets/images/right_arrow_circle.png">
@@ -82,23 +83,23 @@
         <!--    ^^^^^^^^^^^^^ -> asosiy pageni main windowi-2-->
         <div class="service-links">
             <p class="services-text-header">Услуги</p>
-            <a class="services-text-description-link" href="">
+            <a class="services-text-description-link" >
                 <p class="services-text-description">Тарифы на услуги по обеспечению <br> контроля доступа на территорию
                     <br> VISMA на 2022 год
                 </p>
             </a>
-            <button class="services-text-description-button-1">PDF</button>
+            <a class="download-me" href="assets/pdf-files/about-visma.pdf" download="about-visma.pdf"><button class="services-text-description-button-1">PDF</button></a>
             <!-- ^^^^^^^^^^^^ -> Main-Window-2 dagi linklar-->
 
-            <a class="services-text-description-link" href="">
+            <a class="services-text-description-link">
                 <p class="services-text-description">Условия определения цены <br> договора и тарифы на работы</p>
             </a>
-            <button class="services-text-description-button-2">PDF</button>
+            <a class="download-me" href="assets/pdf-files/goods-about-visma.pdf" download="goods-about-visma.pdf"><button class="services-text-description-button-2">PDF</button></a>
 
-            <a class="services-text-description-link" href="">
+            <a class="services-text-description-link" >
                 <p class="services-text-description">Договор перевалки <br> (типовая форма)</p>
             </a>
-            <button class="services-text-description-button-2">PDF</button>
+            <a class="download-me" href="assets/pdf-files/description-visma.pdf" download="description-visma.pdf"><button class="services-text-description-button-2">PDF</button></a>
         </div>
         <div class="service-directions">
             <!--    ^^^^^^^^^^^^^^^^^^^ -> main window 2 ni 2-parti-->
@@ -168,14 +169,23 @@
         </ul>
 
         <img class="video-player" src="assets/images/video_image.png">
-        <a href=""><img class="video-player-button" src="assets/images/video_image_palyer.png"></a>
+        <a class="as-button" onclick="ShowVideo()"><img class="video-player-button"
+                src="assets/images/video_image_palyer.png"></a>
         <!-- ^^^^^^^^^^^^^^^^^^^^^^ -> video player uchun-->
 
         <div class="addition-description">
             <p class="addition-description-header">ЗАПРОС СТАВКИ И УСЛОВИЙ ПОГРУЗОЧНО-РАЗГРУЗОЧНЫХ РАБОТ</p>
-            <p class="addition-description-text">Рассчитайте моментально стоимость полных портовых услуг в порту VISMA</p>
+            <p class="addition-description-text">Рассчитайте моментально стоимость полных портовых услуг в порту VISMA
+            </p>
         </div>
-
+        <!--vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -> videoPlayer-->
+        <div id="videoPlayer" class="videoPlayer">
+            <iframe class="video" src="https://www.youtube.com/embed/q2Ih_z2laYw?si=kBJ-6Lx99pAjellq"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <img onclick="closeVideo()" class="x-icon" src="assets/images/x_icon.png">
+        </div>
     </div>
 
     <div id="novosti" class="main-window-4">
@@ -225,16 +235,60 @@
     <footer>
         <div class="footer-header">
             <img class="location-icon" src="assets/images/location_icon.png">
-            <img class="footer-logo" src="assets/images/visma_logo-white.png">
+            <p class="location-text">123456, г. Тавима, ул. Морская, д. 21</p>
+            <a href="#main"><img class="footer-logo" src="assets/images/visma_logo-white.png"></a>
             <img class="phone-icon" src="assets/images/phone_icon.png">
             <p class="phone-number">+7 (123) 456-67-89</p>
             <img class="message-icon" src="assets/images/maessage_icon.png">
-            <p class="message-username">order@visma.ruder</p>
+            <p class="message-user-name">order@visma.ru</p>
         </div>
         <div class="footer-body">
-
+            <div class="information">
+                <p class="information-header">ИНФОРМАЦИЯ О ЮР. ЛИЦЕ <br><br></p>
+                <p class="information-text">
+                    ОГРН 11111111111111111 <br>
+                    ИНН 2222222222222 <br>
+                    КПП 3333333333333 <br>
+                    ОКПО 44444444444 ОКВЭД 52.24 <br>
+                    ОКТМО 5555555555555
+                </p>
+            </div>
+            <div class="bought">
+                <p class="information-header">ЗАКУПКИ<br><br></p>
+                <p class="information-text">
+                    Нормативные документы <br>
+                    Закупки на VISMA Order <br>
+                    Закупки на VISMA Tender
+                </p>
+            </div>
+            <div class="auksions">
+                <p class="information-header">АКЦИОНЕРАМ<br><br></p>
+                <p class="information-text">
+                    Устав VISMA <br>
+                    Свидетельства госрегистрации <br>
+                    Список аффилированных лиц <br>
+                    Информация <br>
+                    Отчеты
+                </p>
+            </div>
+            <div class="company">
+                <p class="information-header">О КОМПАНИИ<br><br></p>
+                <p class="information-text">
+                    Порт сегодня <br>
+                    Характеристики порта <br>
+                    История <br>
+                    Дипломы и награды <br>
+                    Транспортная безопасность <br>
+                    Экология <br>
+                    Правовая информация
+                </p>
+            </div>
+            <p class="all-rights">ВСЕ ПРАВА ЗАЩИЩЕНЫ АО VISMA</p>
         </div>
     </footer>
+
+
+    <script src="assets/js-codes/index-jses.js"></script>
 </body>
 
 </html>
